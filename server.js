@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require('express')
 const app = express();
 const port = process.env.PORT || 3000
@@ -8,11 +10,11 @@ app.disable('x-powered-by')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const routes = require('./routes/routes.js')
+// const routes = require('./routes/routes.js')
 
 app.use(express.static('public'))
 
-app.use('/', routes)
+// app.use('/', routes)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
