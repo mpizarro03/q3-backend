@@ -16,7 +16,7 @@ exports.up = function(knex, Promise) {
 
     table.timestamps(true, true)
 
-    table.integer('score').notNullable().defaultsTo(0)
+    table.integer('score').notNullable()
 
     table.string('feedback').notNullable().defaultsTo('')
 
