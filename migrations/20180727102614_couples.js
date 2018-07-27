@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('user2_id').notNullable().defaultsTo(0)
     table.foreign('user2_id').references('users.id').onDelete('CASCADE')
 
+    table.unique(['user1_id', 'user2_id'])
   })
 };
 
