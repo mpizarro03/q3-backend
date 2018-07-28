@@ -14,8 +14,9 @@ const getFeelings = (user_id,is_loved)=> {
   })
 }
 
-// const createFeelings = (user1,user2) => {
-// }
+const createFeelings = (user1,user2) => {
+  return Knex('users_feelings')
+}
 //
 //
 // const updateFeelings = () => {
