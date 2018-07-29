@@ -8,14 +8,12 @@ const getFeelings = (user_id,is_loved)=> {
     if (!feelings) {
       return { status: 404, errors: `Could not find user feelings` }
     }
-
     return feelings
-
   })
 }
 
 const createFeelings = (feelings) => {
-
+  //make subqueries a variable that is called into this function. 
     //SELECT from("FEELINGS") WHERE is_default = true
     //loop through feelings, [{}, {}, {}]
     //if feelings[i].name doesn't match anything from the SELECT, then INSERT into the table
@@ -30,7 +28,8 @@ const createFeelings = (feelings) => {
     is_default: is_default
   }
   return Knex('users_feelings')
-  .insert(newFeeling)
+    .insert(newFeeling)
+
 }
 //
 //
