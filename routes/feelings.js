@@ -4,7 +4,7 @@ const ctrl = require('../controller/feelings')
 
 router.get('/:type', ctrl.getFeelings)
 
-// router.post('/:type', ctrl.createFeelings)
+router.post('/:type', ctrl.createFeelings)
 
 // router.patch('/:type', ctrl.updateFeelings)
 

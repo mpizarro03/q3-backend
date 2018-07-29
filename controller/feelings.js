@@ -10,9 +10,12 @@ const getFeelings = (req, res, next) => {
 
 
 }
-// const createFeelings = (req, res, next) => {
 
-// }
+
+const createFeelings = (req, res, next) => {
+
+  model.createFeelings(req.body)
+}
 
 // const updateFeelings = (req, res, next) => {
 
@@ -20,6 +23,6 @@ const getFeelings = (req, res, next) => {
 
 module.exports = {
   getFeelings,
-  // createFeelings,
+  createFeelings
   // updateFeelings
 }
