@@ -3,6 +3,7 @@ const app = express()
 const env = require('dotenv').config()
 const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
+const cors =  require('cors')
 
 const couplesRoutes = require('./routes/couples.js')
 const feelingsRoutes = require('./routes/feelings.js')
@@ -17,6 +18,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static('public'))
+app.use(cors())
 
 app.use('/api/users',usersRoutes)
 app.use('/api/couples',couplesRoutes)
@@ -24,6 +26,7 @@ app.use('/api/feelings', getAllFeelingsRoutes)
 app.use('/api/users/:user_id/feelings',feelingsRoutes)
 app.use('/api/users/:user_id/received_scores',receivedScoresRoutes)
 app.use('/api/users/:user_id/sent_scores',sentScoresRoutes)
+
 
 app.use((err, req, res, next) => {
   const status = err.status || 500

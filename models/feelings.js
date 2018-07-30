@@ -16,6 +16,15 @@ const getFeelings = (user_id,is_loved)=> {
   })
 }
 
+const createFeeling = (feeling) => {
+  console.log("modelTIME", feeling)
+  return knex('feelings')
+    .insert(feeling)
+    .then()
+    console.log("model", feeling)
+}
+
+
 const createFeelings = (feelings) => {
   feelings.map(feeling => {
     return knex('feelings')
@@ -63,6 +72,7 @@ const createFeelings = (feelings) => {
 module.exports = {
   getFeelings,
   getAllFeelings,
+  createFeeling,
   // createFeelings,
   // updateFeelings
 }

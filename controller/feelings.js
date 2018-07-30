@@ -25,6 +25,14 @@ const createFeelings = (req, res, next) => {
   model.createFeelings(req.body)
 }
 
+const createFeeling = (req, res, next) => {
+  model.createFeeling(req.body)
+  .then((result)=>{
+    res.send(result)
+  })
+
+
+}
 const updateFeelings = (req, res, next) => {
 
 }
@@ -33,5 +41,6 @@ module.exports = {
   getFeelings,
   createFeelings,
   getAllFeelings,
+  createFeeling,
   // updateFeelings
 }
