@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-let data = ["fuck", "marry", "kill"]
+// let data = ["fuck", "marry", "kill"]
+// let data = 
+
 let dropDown = document.getElementById("dropdown-list")
 let writeIn = document.getElementById("type-in-feelings")
 let option
@@ -17,13 +19,11 @@ dropDown.addEventListener("change", function populate() {
   h.textContent = dropDown.value
   popHole.appendChild(h)
 
-  
+
 })
 
   writeIn.addEventListener("input", function(){
     let text = writeIn.value
-    console.log("clicked", text)
-
     let popHole = document.getElementById("populate-feelings")
     let h = document.createElement("h1")
     h.textContent = text
