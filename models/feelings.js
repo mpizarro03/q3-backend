@@ -1,5 +1,9 @@
 const knex = require('../knex')
 
+const getAllFeelings = () => {
+  return knex('feelings')
+}
+
 const getFeelings = (user_id,is_loved)=> {
   return knex('users_feelings')
   .where({user_id: user_id, is_loved: is_loved})
@@ -13,7 +17,7 @@ const getFeelings = (user_id,is_loved)=> {
 }
 
 const createFeelings = (feelings) => {
-  //make subqueries a variable that is called into this function. 
+  //make subqueries a variable that is called into this function.
     //SELECT from("FEELINGS") WHERE is_default = true
     //loop through feelings, [{}, {}, {}]
     //if feelings[i].name doesn't match anything from the SELECT, then INSERT into the table
@@ -39,6 +43,7 @@ const createFeelings = (feelings) => {
 
 module.exports = {
   getFeelings,
+  getAllFeelings,
   // createFeelings,
   // updateFeelings
 }
