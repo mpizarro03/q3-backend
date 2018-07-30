@@ -62,7 +62,7 @@ const createFeeling = (feeling) => {
     //   is_default: is_default
     // }
 
-}
+//}
 
 // const updateFeelings = () => {
 //
