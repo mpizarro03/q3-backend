@@ -13,26 +13,43 @@ const getFeelings = (user_id,is_loved)=> {
 }
 
 const createFeelings = (feelings) => {
-  //make subqueries a variable that is called into this function. 
+  feelings.map(feeling => {
+    return knex('feelings')
+    .where('is_default', '=', true)
+    .andWhere('name', '=', feeling.name)
+    .then((newFeeling) => {
+      if(!newFeeling) {
+        return knex('feelings')
+          .insert({
+            name: name,
+            description: description,
+            is_loved: is_loved,
+            is_default: is_default
+          })
+      }
+      return knex('user_feelings')
+    })
+  })
+
+
+
     //SELECT from("FEELINGS") WHERE is_default = true
     //loop through feelings, [{}, {}, {}]
     //if feelings[i].name doesn't match anything from the SELECT, then INSERT into the table
-  const name = feelings.name
-  const description = feeling.description
-  const is_loved = feeling.is_loved
-  const is_default = feeling.is_default
-  const newFeeling = {
-    name: name,
-    description: description,
-    is_loved: is_loved,
-    is_default: is_default
-  }
-  return Knex('users_feelings')
-    .insert(newFeeling)
+    // const name = feelings.name
+    // const description = feeling.description
+    // const is_loved = feeling.is_loved
+    // const is_default = feeling.is_default
+    //
+    // const newFeeling = {
+    //   name: name,
+    //   description: description,
+    //   is_loved: is_loved,
+    //   is_default: is_default
+    // }
 
 }
-//
-//
+
 // const updateFeelings = () => {
 //
 // }
