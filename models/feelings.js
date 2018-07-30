@@ -1,11 +1,5 @@
 const knex = require('../knex')
 
-
-
-// let info = function getAllFeelings() {
-//   return knex('feelings')
-//   console.log(info)
-// }
 const getAllFeelings = () => {
   return knex('feelings')
 }
@@ -23,32 +17,31 @@ const getFeelings = (user_id,is_loved)=> {
 }
 
 const createFeeling = (feeling) => {
-  console.log("get all feelings")
+  // console.log("get all feelings")
   return knex('feelings')
-    .where('is_default', '=', true)
     .insert(feeling)
     .then()
 }
 
 
-const createFeelings = (feelings) => {
-  feelings.map(feeling => {
-    return knex('feelings')
-    .where('is_default', '=', true)
-    .andWhere('name', '=', feeling.name)
-    .then((newFeeling) => {
-      if(!newFeeling) {
-        return knex('feelings')
-          .insert({
-            name: name,
-            description: description,
-            is_loved: is_loved,
-            is_default: is_default
-          })
-      }
-      return knex('user_feelings')
-    })
-  })
+// const createFeelings = (feelings) => {
+//   feelings.map(feeling => {
+//     return knex('feelings')
+//     .where('is_default', '=', true)
+//     .andWhere('name', '=', feeling.name)
+//     .then((newFeeling) => {
+//       if(!newFeeling) {
+//         return knex('feelings')
+//           .insert({
+//             name: name,
+//             description: description,
+//             is_loved: is_loved,
+//             is_default: is_default
+//           })
+//       }
+//       return knex('user_feelings')
+//     })
+//   })
 
 
 
