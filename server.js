@@ -9,7 +9,6 @@ const feelingsRoutes = require('./routes/feelings.js')
 const receivedScoresRoutes = require('./routes/received_scores.js')
 const sentScoresRoutes = require('./routes/sent_scores.js')
 const usersRoutes = require('./routes/users.js')
-// const getAllCouples = require('./routes/couples.js')
 const getAllFeelingsRoutes = require('./routes/feelings.js')
 
 
@@ -17,14 +16,11 @@ app.disable('x-powered-by')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// const routes = require('./routes/routes.js')
-
 app.use(express.static('public'))
 
 app.use('/api/users',usersRoutes)
 app.use('/api/couples',couplesRoutes)
 app.use('/api/feelings', getAllFeelingsRoutes)
-// app.use('/api/couples', getAllCouples)
 app.use('/api/users/:user_id/feelings',feelingsRoutes)
 app.use('/api/users/:user_id/received_scores',receivedScoresRoutes)
 app.use('/api/users/:user_id/sent_scores',sentScoresRoutes)
