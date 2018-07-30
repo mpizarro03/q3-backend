@@ -39,7 +39,7 @@ console.log(text)
 let button = document.getElementById('button')
 button.addEventListener('click', function(e) {
   e.preventDefault()
-  let obj = {'id': 16,
+  let obj = {'id': 22,
 'name': text, 'description': '', 'is_loved': true, 'is_default': false }
 
   $.post('http://localhost:3000/api/feelings', obj)

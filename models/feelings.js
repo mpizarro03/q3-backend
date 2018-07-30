@@ -1,5 +1,11 @@
 const knex = require('../knex')
 
+
+
+// let info = function getAllFeelings() {
+//   return knex('feelings')
+//   console.log(info)
+// }
 const getAllFeelings = () => {
   return knex('feelings')
 }
@@ -17,11 +23,11 @@ const getFeelings = (user_id,is_loved)=> {
 }
 
 const createFeeling = (feeling) => {
-  console.log("modelTIME", feeling)
+  console.log("get all feelings")
   return knex('feelings')
+    .where('is_default', '=', true)
     .insert(feeling)
     .then()
-    console.log("model", feeling)
 }
 
 
