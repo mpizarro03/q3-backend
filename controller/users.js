@@ -29,12 +29,12 @@ const createUser = (req, res, next) => {
 
 
 const deleteUser = (req, res, next) => {
-  const userId = req.body.id
+  const userId = req.params.id
   model.deleteUser(userId).then( data => {
     if (data) {
       res.send( { message: 'User successfully deleted' } )
     } else {
-    res.send( { message: 'User does not exists' } )
+    res.send( { message: 'User does not exist' } )
     }
   })
 }
