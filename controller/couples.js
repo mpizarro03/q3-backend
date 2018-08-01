@@ -1,10 +1,14 @@
 const model = require('../models/couples')
 
+
 const handleError = (result) => {
+
     return { status: result.status, message: result.errors }
 }
 
+
 const createCouple = (req, res, next) => {
+
   const { user1_id, user2_id } = req.body
   if (user1_id === undefined|| user2_id === undefined) return next({ status: 400, message: `2 user ids are required` })
 
@@ -31,5 +35,5 @@ const deleteCouple = (req, res, next) => {
 
 module.exports = {
   createCouple,
-  deleteCouple
+  deleteCouple,
 }

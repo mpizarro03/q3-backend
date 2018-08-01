@@ -28,4 +28,5 @@ const deleteCouple = (couple_id) => {
 module.exports = {
   createCouple,
   deleteCouple,
+
 }
