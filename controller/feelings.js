@@ -1,11 +1,5 @@
 const model = require('../models/feelings')
 
-const getAllFeelings = (req, res, next) => {
-  model.getAllFeelings()
-  .then((result) => {
-    res.send(result)
-  })
-}
 
 const getFeelings = (req, res, next) => {
   const {user_id, type } = req.params
@@ -19,12 +13,12 @@ const getFeelings = (req, res, next) => {
 //   model.createFeelings(req.body)
 // }
 
-const createFeeling = (req, res, next) => {
-  model.createFeeling(req.body)
-  .then((result) => {
-    res.send(result)
-  })
-}
+// const createFeeling = (req, res, next) => {
+//   model.createFeeling(req.body)
+//   .then((result) => {
+//     res.send(result)
+//   })
+// }
 
 // const updateFeelings = (req, res, next) => {
 //
@@ -32,8 +26,4 @@ const createFeeling = (req, res, next) => {
 
 module.exports = {
   getFeelings,
-  // createFeelings,
-  getAllFeelings,
-  createFeeling,
-  // updateFeelings
 }

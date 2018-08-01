@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('name').notNullable().defaultsTo('')
     table.string('description').notNullable().defaultsTo('')
     table.boolean('is_loved').defaultsTo(null)
-    table.boolean('is_default').defaultsTo(null)
+    table.boolean('is_default').defaultsTo(false)
   })
 }
 

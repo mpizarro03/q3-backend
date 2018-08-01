@@ -1,9 +1,5 @@
 const knex = require('../knex')
 
-const getAllFeelings = () => {
-  return knex('feelings')
-}
-
 const getFeelings = (user_id,is_loved)=> {
   return knex('users_feelings')
   .where({user_id: user_id, is_loved: is_loved})
@@ -16,12 +12,11 @@ const getFeelings = (user_id,is_loved)=> {
   })
 }
 
-const createFeeling = (feeling) => {
-  // console.log("get all feelings")
-  return knex('feelings')
-    .insert(feeling)
-    .then()
-}
+// const createFeeling = (feeling) => {
+//   return knex('feelings')
+//     .insert(feeling)
+//     .then()
+// }
 
 
 // const createFeelings = (feelings) => {
@@ -70,8 +65,4 @@ const createFeeling = (feeling) => {
 
 module.exports = {
   getFeelings,
-  getAllFeelings,
-  createFeeling,
-  // createFeelings,
-  // updateFeelings
 }
