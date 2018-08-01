@@ -5,12 +5,13 @@ const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const cors =  require('cors')
 
+const staticFeelingsRoutes = require('./routes/static_feelings.js')
 const couplesRoutes = require('./routes/couples.js')
 const feelingsRoutes = require('./routes/feelings.js')
 const receivedScoresRoutes = require('./routes/received_scores.js')
 const sentScoresRoutes = require('./routes/sent_scores.js')
 const usersRoutes = require('./routes/users.js')
-const getAllFeelingsRoutes = require('./routes/feelings.js')
+const allFeelingsRoutes = require('./routes/all_feelings.js')
 
 
 app.disable('x-powered-by')
@@ -22,8 +23,9 @@ app.use(cors())
 
 app.use('/api/users',usersRoutes)
 app.use('/api/couples',couplesRoutes)
-app.use('/api/feelings', getAllFeelingsRoutes)
-app.use('/api/users/:user_id/feelings',feelingsRoutes)
+app.use('/api/static_feelings', staticFeelingsRoutes)
+app.use('/api/feelings', allFeelingsRoutes)
+app.use('/api/users/:user_id/feelings', feelingsRoutes)
 app.use('/api/users/:user_id/received_scores',receivedScoresRoutes)
 app.use('/api/users/:user_id/sent_scores',sentScoresRoutes)
 
