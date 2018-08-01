@@ -7,7 +7,9 @@ const getFeelings = () => {
 const createFeeling = (feeling) => {
   return knex('feelings')
     .insert(feeling)
-    .then()
+    .then((response) => {
+      return response
+    })
 }
 
 
