@@ -29,8 +29,8 @@ const createUser = (req, res, next) => {
 
 
 const deleteUser = (req, res, next) => {
-  const userEmail = req.body.email
-  model.deleteUser(userEmail).then( data => {
+  const userId = req.body.id
+  model.deleteUser(userId).then( data => {
     if (data) {
       res.send( { message: 'User successfully deleted' } )
     } else {
