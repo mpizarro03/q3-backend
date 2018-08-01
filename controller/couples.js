@@ -28,7 +28,7 @@ const deleteCouple = (req, res, next) => {
     if (data) {
       res.send( { message: 'Couple successfully deleted' } )
     } else {
-    res.send( { message: 'Couple does not exists' } )
+    res.send( { message: 'Couple does not exist' } )
     }
   })
 }
