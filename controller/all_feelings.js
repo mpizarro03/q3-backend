@@ -11,7 +11,6 @@ const getFeelings = (req, res, next) => {
   model.getFeelings()
   .then((result) => {
     res.send(result)
-
     console.log("all_feelings/createfeeling")
   })
 
