@@ -18,10 +18,7 @@ const getOneFeeling = (id) => {
 const createFeeling = (feeling) => {
   return knex('feelings')
     .insert(feeling)
-<<<<<<< HEAD
     .returning('id')
-=======
->>>>>>> 6658b8dd8d8a6a7852a1e092173551fec057b0bf
     .then((data) => {
       return data
     })
