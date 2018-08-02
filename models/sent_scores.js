@@ -2,7 +2,8 @@ const knex = require('../knex')
 
 
 const getScores = (user_id,is_loved)=> {
-  return knex.select('score', 'feedback', 'description', 'created_at').from('scores')
+  return knex.select('couple_id', 'from_user_id', 'to_user_id', 'users_feelings_id', 'score', 'feedback',  'created_at')
+  .from('scores')
   .where({from_user_id: user_id})
   .join('users_feelings','users_feelings.id', 'scores.users_feelings_id')
   .join('feelings','users_feelings.feeling_id', 'feelings.id')
