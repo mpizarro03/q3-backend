@@ -15,7 +15,15 @@ const getFeelings = (req, res, next) => {
 
 }
 
+const getOneFeeling = (req, res, next) => {
+  model.getOneFeeling(req.params.id)
+  .then((result) => {
+    res.send(result)
+  })
+}
+
 module.exports = {
   createFeeling,
-  getFeelings
+  getFeelings,
+  getOneFeeling,
  }
