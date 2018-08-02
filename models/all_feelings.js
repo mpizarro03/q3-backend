@@ -18,18 +18,12 @@ const getOneFeeling = (id) => {
 const createFeeling = (feeling) => {
   knex('feelings')
     .insert(feeling)
-<<<<<<< HEAD
-    .then((id) => {
-    return id
-    .where({id: feeling_id})
-=======
     .then((data) => {
       return knex('feelings')
         .where('name', feeling.name)
     })
     .catch((err)=> {
       return err
->>>>>>> c1c32e8c6f9cd7ee3ad94c78f312ee6c5de8781d
     })
 }
 
