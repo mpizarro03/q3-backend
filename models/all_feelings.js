@@ -5,10 +5,11 @@ const getFeelings = () => {
 }
 
 const createFeeling = (feeling) => {
-  return knex('feelings')
+  knex('feelings')
     .insert(feeling)
-    .then((response) => {
-      return response
+    .then((id) => {
+    return id
+    .where({id: feeling_id})
     })
 }
 
