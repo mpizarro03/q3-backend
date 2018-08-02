@@ -16,11 +16,11 @@ const getOneFeeling = (id) => {
 }
 
 const createFeeling = (feeling) => {
-  knex('feelings')
+  return knex('feelings')
     .insert(feeling)
+    .returning('id')
     .then((data) => {
-      return knex('feelings')
-        .where('name', feeling.name)
+      return data
     })
     .catch((err)=> {
       return err
