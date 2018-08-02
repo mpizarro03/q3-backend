@@ -10,6 +10,7 @@ exports.seed = function(knex, Promise) {
         {id: 4, couple_id: 1, from_user_id: 1 , to_user_id: 2, users_feelings_id:4 , score: 7, feedback: "lorem ipsum" },
         {id: 5, couple_id: 1, from_user_id: 1 , to_user_id: 2, users_feelings_id:5 , score: 7, feedback: "lorem ipsum" },
         {id: 6, couple_id: 1, from_user_id: 1 , to_user_id: 2, users_feelings_id:6 , score: 7, feedback: "lorem ipsum" },
+        
         {id: 7, couple_id: 1, from_user_id: 2 , to_user_id: 1, users_feelings_id:7 , score: 7, feedback: "lorem ipsum" },
         {id: 8, couple_id: 1, from_user_id: 2 , to_user_id: 1, users_feelings_id:8 , score: 7, feedback: "lorem ipsum" },
         {id: 9, couple_id: 1, from_user_id: 2 , to_user_id: 1, users_feelings_id:9 , score: 7, feedback: "lorem ipsum" },

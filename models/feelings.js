@@ -1,8 +1,8 @@
 const knex = require('../knex')
 
-const getFeelings = (user_id,is_loved)=> {
+const getFeelings = (user_id)=> {
   return knex('users_feelings')
-  .where({user_id: user_id, is_loved: is_loved})
+  .where({user_id: user_id})
   .join('feelings',"feeling_id", "feelings.id")
   .then( (feelings)=> {
     if (!feelings) {
