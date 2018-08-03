@@ -7,45 +7,45 @@ exports.seed = function(knex, Promise) {
       return knex('feelings').insert([
         {
           id: 1,
-          name: 'Appreciation',
-          description: 'The recognition and enjoyment of the good qualities of someone or something.',
-          is_loved: true,
-          is_default: true
-        },
-        {
-          id: 2,
           name: 'Quality Time',
           description: 'Time spent in giving another person one\'s undivided attention in order to strengthen a relationship, especially with reference to working parents and their child or children.',
           is_loved: true,
           is_default: true
         },
         {
-          id: 3,
-          name: 'Affection',
-          description: 'A gentle feeling of fondness or liking.',
+          id: 2,
+          name: 'Sexual Intimacy',
+          description: 'An emotional state that is often reserved for just one person. Ideally, sex in a loving relationship should be the physical embodiment of intimacy.',
           is_loved: true,
-          is_default: true
+          is_default: false
+        },
+        {
+          id: 3,
+          name: 'Alone Time',
+          description: 'I need a lot of time to myself so I can recharge for being social.',
+          is_loved: true,
+          is_default: false
         },
         {
           id: 4,
-          name: 'Adoration',
-          description: 'Deep love and respect.',
-          is_loved: true,
+          name: 'Harsh Anger',
+          description: 'Expression of intense anger reminds me of my abusive father',
+          is_loved: false,
           is_default: true
         },
         {
           id: 5,
-          name: 'Sexual Intimacy',
-          description: 'An intimate act, especially sexual intercourse.',
-          is_loved: true,
-          is_default: true
+          name: 'Not Contributing',
+          description: "It really makes me feel like you don't respect my time when you don't contribute to house hold chores, including administrative things like budgets etc",
+          is_loved: false,
+          is_default: false
         },
         {
           id: 6,
-          name: 'Recreation Together',
-          description: 'Going out hiking with my partner, enjoying active time outside together.',
-          is_loved: true,
-          is_default: true
+          name: 'Work Too Much',
+          description: "I don't mind that you work a lot, but you stop taking care of your personal health when you are overworked, and part of taking care of others is taking care of yourself.",
+          is_loved: false,
+          is_default: false
         },
         {
           id: 7,
