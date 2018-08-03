@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
 
       return knex('static_feelings').insert([
-        {id: 1, name: 'Affection', is_loved: true},
+        {id: 1, name: 'Appreciation', is_loved: true},
         {id: 2, name: 'Quality Time', is_loved: true},
         {id: 3, name: 'Affection', is_loved: true},
         {id: 4, name: 'Adoration', is_loved: true},
