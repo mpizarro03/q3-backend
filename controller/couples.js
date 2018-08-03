@@ -10,7 +10,7 @@ const handleError = (result) => {
 const createCouple = (req, res, next) => {
 
   const { user1_id, user2_id } = req.body
-  if (user1_id === undefined|| user2_id === undefined) return next({ status: 400, message: `2 user ids are required` })
+  if (user1_id === undefined || user2_id === undefined) return next({ status: 400, message: `2 user ids are required` })
 
   const couple = { user1_id, user2_id }
   model.createCouple(couple).then( data => {
